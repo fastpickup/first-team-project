@@ -1,8 +1,10 @@
 package com.project.fp01;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@MapperScan(basePackages = {"com.project.fp01.**.mappers"})
 @SpringBootApplication
 public class Fp01Application {
 
