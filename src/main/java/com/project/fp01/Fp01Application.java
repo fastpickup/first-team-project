@@ -10,6 +10,7 @@ public class Fp01Application {
 		SpringApplication.run(Fp01Application.class, args);
 		System.out.println("이주용 비잉신");
 		System.out.println("권성준 비잉신");
+		System.out.println("git commit Test");
 	}
 
 }
