@@ -8,6 +8,7 @@ public class Fp01Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Fp01Application.class, args);
+		System.out.println("이주용 비잉신");
 	}
 
 }
