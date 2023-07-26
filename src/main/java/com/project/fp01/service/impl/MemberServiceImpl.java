@@ -22,6 +22,10 @@ public class MemberServiceImpl implements MemberService {
 
   //의존성 주입
   private final MemberMapper memberMapper;
+//  public MemberServiceImpl(MemberMapper memberMapper){
+//    log.info("-----------------------------------------------------");
+//    this.memberMapper = memberMapper;
+//  }
 
   //join Member
   @Override

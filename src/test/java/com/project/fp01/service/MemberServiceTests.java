@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @SpringBootTest
 @Log4j2
 public class MemberServiceTests {
@@ -68,5 +70,39 @@ public class MemberServiceTests {
     log.info("=== End Member Read Service Test ===");
   }
 
-  //
+  //delete test
+  @Test
+  @Transactional
+  @DisplayName("멤버 삭제 테스트 서비스")
+  public void testDeleteMemberService(){
+    log.info("=== Start Member Delete Service Test ===");
+    int delteMember = memberService.deleteMember(TEST_EMAIL);
+    MemberDTO dto = memberService.readMember(TEST_EMAIL);
+    Assertions.assertNull(dto);
+    log.info("=== End Member Delete Service Test ===");
+  }
+
+  //update test
+  @Test
+  @Transactional
+  @DisplayName("멤버 수정 테스트 서비스")
+  public void testUpdateMemberService(){
+    log.info("=== Start Member Update Service Test ===");
+    int updateMember = memberService.updateMember(memberDTO);
+    MemberDTO dto = memberService.readMember(TEST_EMAIL);
+    Assertions.assertEquals(memberDTO.getEmail(), "jo_sh_1028@naver.com");
+    log.info("=== End Member Update Service Test ===");
+  }
+
+  //list test
+  @Test
+  @Transactional
+  @DisplayName("멤버 리스트 테스트 서비스")
+  public void testListMemberService(){
+    log.info("=== Start Member List Service Test ===");
+    List<MemberDTO> list = memberService.listMember();
+    log.info(list);
+    Assertions.assertNotNull(list, "list is notNull");
+    log.info("=== End Member List Service Test ===");
+  }
 }
