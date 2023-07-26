@@ -24,11 +24,16 @@
         WHERE email = #{email}
     </delete>
 
-
-    
-
     <!-- MemberMapper id = "listMember" -->
+    <select id="listMember"> 
+        SELECT * FROM tbl_member
+    </select>
 
     <!-- MemberMapper id = "updateMember" -->
+    <update id="updateMember" parameterType="com.project.fp01.dto.MemberDTO">
+        UPDATE tbl_member
+        SET memberPw = #{memberPw}, memberName = #{memberName}, memberPhone = #{memberPhone}
+        WHERE email = #{email}
+    </update>
 
 </mapper>
