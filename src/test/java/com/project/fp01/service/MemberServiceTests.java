@@ -31,6 +31,7 @@ public class MemberServiceTests {
   private static final String TEST_MEMBER_PASSWORD = "sdlkfjslkfj";
   private static final String TEST_MEMBER_NAME = "조상희";
   private static final String TEST_MEMBER_PHONE="010-4597-1589";
+  private static final String TEST_EMAIL_VERSION_2 = "JOSHWFWE@naver.com";
 
   //dto 생성
   private MemberDTO memberDTO;
@@ -39,7 +40,7 @@ public class MemberServiceTests {
   @BeforeEach
   public void init(){
     memberDTO = MemberDTO.builder()
-      .email(TEST_EMAIL)
+      .email(TEST_EMAIL_VERSION_2)
       .memberPw(TEST_MEMBER_PASSWORD)
       .memberName(TEST_MEMBER_NAME)
       .memberPhone(TEST_MEMBER_PHONE)
